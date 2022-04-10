@@ -1,37 +1,38 @@
-## Welcome to GitHub Pages
+## Modified Lee More Model (MLM) for Electronic Transport
 
-You can use the [editor on GitHub](https://github.com/MurilloGroupMSU/Modified-Lee-More-Transport/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+A library is provided that evaluates the Lee-More (LM) electrical conductivity model. Currently (as of April 2022) the MLM only calculates the electrical conductivity for an unmagnetized plasma. MLM is written in Python. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+The original LM paper is [here](https://aip.scitation.org/doi/10.1063/1.864744).
 
-### Markdown
+### What is it? 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+The MLM is a variant of the original LM model that makes slightly different choices for parameters.  Briefly, choices for undefined parameters (e.g., mean distance between particles) and inconsistent parameters (e.g., using an effective temperature) were made. 
 
-```markdown
-Syntax highlighted code block
+Although the MLM is a standalone library, it was originally developed in the context of discrepancy learning in which the MLM is the base model and conductivity data (originally from Katsouros and DeSilva) was used to learn the discrepancy using radial basis function neural networks. That original work is cited below.
 
-# Header 1
-## Header 2
-### Header 3
+### How do I use it? 
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+The first step is to insall the libray using
+```
+pip install MLM_Transport
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+Next, import the library into your Python code with
+```
+import MLM
+```
 
-### Jekyll Themes
+To compute an electrical conductivty with a known element with nuclear charge $Z$, mass density $\rho$ in g/cc and temperature $T$ in eV, use
+```
+elect_cond = MLM(z, rho, T).
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/MurilloGroupMSU/Modified-Lee-More-Transport/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+### What's next?
 
-### Support or Contact
+The next version of MLM will include thermal conductivty. The next phase will be focussed on magnetized plasmas. Suggestions and collaborations are welcome.
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+### How do I cite this? 
+
+The origin version of this work appeared in:
+* Data-driven Electrical Conductivities of Dense Plasmas, Michael S. Murillo, Frontiers in Physics, 2022
+
