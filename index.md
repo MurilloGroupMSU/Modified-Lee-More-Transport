@@ -41,7 +41,7 @@ The next version of MLM will include thermal conductivty. Magnetized plasmas for
 
 ### Where I can find the data? 
 
-You might also be interested in the experimental data that motivated this project. I have compiled the Katsouros-DeSilva data here and also provide a Jupyter notebook that allows for quick start with the data. 
+You might also be interested in the experimental data that motivated this project. I have compiled the Katsouros-DeSilva data [here](https://github.com/MurilloGroupMSU/Dense-Plasma-Properties-Database/tree/master/database/DeSilvaKatsouros) and also provide a Jupyter notebook that allows for quick start with the data. 
 
 
 ### How do I cite this? 
