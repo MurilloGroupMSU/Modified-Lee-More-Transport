@@ -12,7 +12,7 @@ Although the MLM is a standalone library, it was originally developed in the con
 
 ### How do I use it? 
 
-The first step is to insall the libray using
+The first step is to install the libray using
 ```
 pip install MLM_Transport
 ```
@@ -24,15 +24,19 @@ import MLM
 
 To compute an electrical conductivty with a known element with nuclear charge _Z_, mass density ρ in g/cc and temperature _T_ in eV, use
 ```
-elect_cond = MLM.ec(z, rho, T).
+elect_cond = MLM.sigma(Z, A, rho, T).
 ```
 It's that easy! 
 
-Under the hood, MLM uses many other libraries that you might also find useful. See the source code for a full list. For example, MLM uses the Thomas-Fermi ionization model, which can be used by itself as
+Under the hood, MLM uses many other libraries that you might also find useful. See the source code for a full list. For example, MLM uses the Thomas-Fermi ionization model, which can be used by itself with the quantities defined above and the atomic mass $A$ as
 ```
-my_zbar = MLM.zbar(z, rho, T)
+my_zbar = MLM.zbar(Z, A, rho, T)
 ```
-
+Other functions include:
+* `effective_temperature`: compute the effective electorn temperature using Fermi integrals,
+* `Ichimaru_chem_pot`: fit to the ideal chemical potential as a function of degneracy, as given by Ichimaru,
+* `FD_int`: Fermi integral of any order computed by quadrature.
+A Jupyter notebook that illustrates each of these is provided in this repo. 
 
 ### What's next?
 
