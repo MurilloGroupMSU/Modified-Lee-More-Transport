@@ -29,12 +29,12 @@ elect_cond = MLM.sigma(Z, A, rho, T).
 It's that easy! 
 
 
-## Are there other functions?
+### Are there other functions?
 
 Yes. To compute transport properties, we need several intermediate quantities that are also of use in other contexts. These are:
 * `zbar`: Thomas-Fermi mean ionization state <Z>,
 * `effective_temperature`: compute the effective electron temperature using Fermi integrals,
-* `Ichimaru_chem_pot`: fit to the ideal chemical potential as a function of degeneracy, as given by Ichimaru,
+* `Ichimaru_chem_pot`: fit to the ideal chemical potential as a function of degeneracy, βμ(θ), as given by Ichimaru,
 * `FD_int`: Fermi integral of any order computed by quadrature.
 
 The Thomas-Fermi ionization model can be called with:
@@ -49,8 +49,8 @@ There are three Fermi integral routines:
 Calling the integrals requires η=βμ and the order; you can optionally control the accuracy for the general purpose case:
 ```
 FD_val_0p5 = MLM.FD_int(-3.14, 1/2)
-FD_val_0 = MLM.FD_int_0(2)
-FD_val_m1 = MLM.FD_int_m1(2)
+FD_val_0 = MLM.FD_int_0(2)    # order 0
+FD_val_m1 = MLM.FD_int_m1(2)  # order 1
 FD_val_0p5_acc = MLM.FD_int(-3.14, 1/2, EPS=1e-7)
 ```
 See the source code for other options.
