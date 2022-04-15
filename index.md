@@ -28,15 +28,31 @@ elect_cond = MLM.sigma(Z, A, rho, T).
 ```
 It's that easy! 
 
-Under the hood, MLM uses many other libraries that you might also find useful. See the source code for a full list. For example, MLM uses the Thomas-Fermi ionization model, which can be used by itself with the quantities defined above and the atomic mass $A$ as
+
+## Are there other functions?
+
+Yes. To compute transport properties, we need several intermediate quantities that are also of use in other contexts. These are:
+* `zbar`: Thomas-Fermi mean ionization state <Z>,
+* `effective_temperature`: compute the effective electron temperature using Fermi integrals,
+* `Ichimaru_chem_pot`: fit to the ideal chemical potential as a function of degeneracy, as given by Ichimaru,
+* `FD_int`: Fermi integral of any order computed by quadrature.
+
+The Thomas-Fermi ionization model can be called with:
 ```
 my_zbar = MLM.zbar(Z, A, rho, T)
 ```
-Other functions include:
-* `effective_temperature`: compute the effective electorn temperature using Fermi integrals,
-* `Ichimaru_chem_pot`: fit to the ideal chemical potential as a function of degneracy, as given by Ichimaru,
-* `FD_int`: Fermi integral of any order computed by quadrature.
-A Jupyter notebook that illustrates each of these is provided in this repo. 
+There are three Fermi integral routines:
+1. order 0, (exact),
+2. order -1 (exact), 
+3. general purpose (any order, any η).
+Calling the integrals is simple and you can control the accuracy for the general purpose case:
+```
+FD_val_0p5 = MLM.FD_int(-3.14, 1/2)
+FD_val_0 = MLM.FD_int_0(2)
+FD_val_m1 = MLM.FD_int_m1(2)
+FD_val_0p5_acc = MLM.FD_int(-3.14, 1/2, EPS=1e-7)
+```
+See the source code for other options.
 
 ### What's next?
 
