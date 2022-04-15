@@ -24,11 +24,11 @@ Next, import the library into your Python code with
 import MLM
 ```
 
-To compute an electrical conductivity with a known element with nuclear charge _Z_, atomic number $A$, mass density ρ in g/cc and temperature _T_ in eV, use
+To compute an electrical conductivity with a known element with nuclear charge _Z_, atomic number _A_, mass density ρ in g/cc and temperature _T_ in eV, use
 ```
 elect_cond = MLM.sigma(Z, A, rho, T).
 ```
-It's that easy! Output units are $S/m$. 
+It's that easy! Output units are _S/m_. 
 
 
 ### Are there other functions?
@@ -52,14 +52,14 @@ Calling the integrals requires η=βμ and the order; you can optionally control
 ```
 FD_val_0p5 = MLM.FD_int(-3.14, 1/2)
 FD_val_0 = MLM.FD_int_0(2)    # order 0
-FD_val_m1 = MLM.FD_int_m1(2)  # order 1
+FD_val_m1 = MLM.FD_int_m1(2)  # order -1
 FD_val_0p5_acc = MLM.FD_int(-3.14, 1/2, EPS=1e-7)
 ```
 See the source code for other options.
 
 ### What's next?
 
-The next version of MLM will include thermal conductivty. Magnetized plasmas for both transport coefficients are next, followed by related transport coefficients. Suggestions and collaborations are welcome.
+The next version of MLM will include thermal conductivity. Magnetized plasmas for both transport coefficients are next, followed by related transport coefficients (e.g., Hall, Nernst, thermoelectric power (Seebeck), Leduc-Righi, Ettinghausen). Suggestions and collaborations are welcome.
 
 
 ### Where I can find the data? 
@@ -69,6 +69,6 @@ You might also be interested in the experimental data that motivated this projec
 
 ### How do I cite this? 
 
-The original version of this work appeared in:
+The original version of this work, including more details, appeared in:
 * Data-driven Electrical Conductivities of Dense Plasmas, Michael S. Murillo, Frontiers in Physics, 2022
 
