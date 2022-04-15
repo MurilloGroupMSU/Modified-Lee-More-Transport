@@ -45,6 +45,7 @@ There are three Fermi integral routines:
 1. order 0, (exact),
 2. order -1 (exact), 
 3. general purpose (any order, any η).
+
 Calling the integrals is simple and you can control the accuracy for the general purpose case:
 ```
 FD_val_0p5 = MLM.FD_int(-3.14, 1/2)
