@@ -3,4 +3,4 @@ plugins:
 - jekyll-remote-theme
 title: MLM: Modified Lee-More Model
 description: Python library that computes electronic transport properties based on the Lee-More conductivity model. 
-show_downloads: true
+# show_downloads: true
