@@ -55,7 +55,7 @@ FD_val_0 = MLM.FD_int_0(2)    # order 0
 FD_val_m1 = MLM.FD_int_m1(2)  # order -1
 FD_val_0p5_acc = MLM.FD_int(-3.14, 1/2, EPS=1e-7)
 ```
-See the source code for other options.
+No Γ function prefactor is used in theis convention. See the source code for other options.
 
 ### What's next?
 
