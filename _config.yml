@@ -2,4 +2,5 @@ remote_theme: pages-themes/minimal@v0.2.0
 plugins:
 - jekyll-remote-theme
 title: Modified Lee-More Model (MLM)
-description: Python library that computes electronic transport properties of dense plasmas based on the Lee-More conductivity model. 
+description: Python library that computes electronic transport properties of dense plasmas based on the Lee-More conductivity model.
+show_downloads: true
