@@ -26,7 +26,8 @@ import MLM
 
 To compute an electrical conductivity with a known element with nuclear charge _Z_, atomic number _A_, mass density ρ in g/cc and temperature _T_ in eV, use
 ```
-elect_cond = MLM.sigma(Z, A, rho, T).
+elect_cond = MLM.sigma(Z, A, rho, T)
+elect_cond_2T = MLM.sigma(Z, A, rho, T_e, T_i)
 ```
 It's that easy! Output units are _S/m_. 
 
@@ -56,6 +57,12 @@ FD_val_m1 = MLM.FD_int_m1(2)  # order -1
 FD_val_0p5_acc = MLM.FD_int(-3.14, 1/2, EPS=1e-7)
 ```
 The convention used has no Γ function prefactor. See the source code for other options.
+  
+For the chemical potential:
+```
+print(MLM.Ichimaru_chem_pot(2.7183))
+-1.7226056272828079
+```
 
 ### What's next?
 
