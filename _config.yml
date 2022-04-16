@@ -1,6 +1,8 @@
-theme: jekyll-theme-minimal
 title: MLM: Modified Lee-More Model
-remote_theme: "godalming123/minimal"
+# logo: /assets/img/logo.png
+description: testing
+show_downloads: true
 plugins:
 - jekyll-remote-theme
+remote_theme: "godalming123/minimal"
 color-scheme: dark
