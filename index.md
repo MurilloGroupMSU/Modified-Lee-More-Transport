@@ -42,8 +42,21 @@ Yes. To compute transport properties, we need several intermediate quantities th
 
 The Thomas-Fermi ionization model can be called with:
 ```
-my_zbar = MLM.zbar(Z, A, rho, T)
+Z = 13
+A = 26
+rho = 2.7
+T = 10
+MLM.zbar(Z, A, rho, T)
+3.018990389147884
 ```
+  
+Effective temperatures require the electron temperature and η=βμ:
+```
+MLM.effective_temperature(10.0, 0.5)
+13.832742338864064 
+```
+  
+  
 There are three Fermi integral routines:
 1. order 0, (exact),
 2. order -1 (exact), 
@@ -66,7 +79,7 @@ print(MLM.Ichimaru_chem_pot(2.7183))
 
 ### What's next?
 
-The next version of MLM will include thermal conductivity. Magnetized plasmas for both transport coefficients are next, followed by related transport coefficients (e.g., Hall, Nernst, thermoelectric power (Seebeck), Leduc-Righi, Ettinghausen). Suggestions and collaborations are welcome.
+The next version of MLM will include thermal conductivity. Magnetized plasmas for both transport coefficients are next, followed by related transport coefficients (e.g., Hall, Nernst, thermoelectric power (Seebeck), Leduc-Righi, Ettinghausen).
 
 
 ### Where I can find the data? 
