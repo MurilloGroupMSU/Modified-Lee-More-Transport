@@ -79,7 +79,7 @@ FD_val_0p5_acc = MLM.FD_int(-3.14, 1/2, EPS=1e-7)
 ```
 The convention used has no Γ function prefactor. See the source code for other options.
 
-Esimating the melting temperature can be done by
+Estimating the melting temperature can be done by
 ```
 Z = 13
 ion_density = 6.e22
@@ -88,7 +88,9 @@ print(MLM.melt_temperature(Z, ion_density, original=True))
 0.09879250036489877
 0.11375117268556773
 ```
-
+Here, `original` uses the fit parameters from LM. 
+  
+  
 ### What's next?
 
 The next version of MLM will include thermal conductivity. Magnetized plasmas for both transport coefficients are next, followed by related transport coefficients (e.g., Hall, Nernst, thermoelectric power (Seebeck), Leduc-Righi, Ettinghausen).
