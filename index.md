@@ -39,7 +39,8 @@ Yes. To compute transport properties, we need several intermediate quantities th
 * `zbar`: Thomas-Fermi mean ionization state <Z>,
 * `effective_temperature`: compute the effective electron temperature using Fermi integrals,
 * `Ichimaru_chem_pot`: fit to the ideal chemical potential as a function of degeneracy, βμ(θ), as given by Ichimaru,
-* `FD_int`: Fermi integral of any order computed by series summation.
+* `FD_int`: Fermi integral of any order computed by series summation,
+* `melt_temperature`: estimate of the melting temperature of any element at any density.
 
 The Thomas-Fermi ionization model can be called with:
 ```
@@ -78,6 +79,15 @@ FD_val_0p5_acc = MLM.FD_int(-3.14, 1/2, EPS=1e-7)
 ```
 The convention used has no Γ function prefactor. See the source code for other options.
 
+Esimating the melting temperature can be done by
+```
+Z = 13
+ion_density = 6.e22
+print(MLM.melt_temperature(Z, ion_density))
+print(MLM.melt_temperature(Z, ion_density, original=True))
+0.09879250036489877
+0.11375117268556773
+```
 
 ### What's next?
 
