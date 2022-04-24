@@ -57,6 +57,12 @@ MLM.effective_temperature(10.0, 0.5)
 ```
   
   
+For the chemical potential:
+```
+print(MLM.Ichimaru_chem_pot(2.7183))
+-1.7226056272828079
+```
+  
 There are three Fermi integral routines:
 1. order 0, (exact),
 2. order -1 (exact), 
@@ -70,12 +76,7 @@ FD_val_m1 = MLM.FD_int_m1(2)  # order -1
 FD_val_0p5_acc = MLM.FD_int(-3.14, 1/2, EPS=1e-7)
 ```
 The convention used has no Γ function prefactor. See the source code for other options.
-  
-For the chemical potential:
-```
-print(MLM.Ichimaru_chem_pot(2.7183))
--1.7226056272828079
-```
+
 
 ### What's next?
 
