@@ -23,6 +23,7 @@ Next, import the library into your Python code with
 ```
 import MLM
 ```
+and ensuring that it is in your path.
 
 To compute an electrical conductivity with a known element with nuclear charge _Z_, atomic number _A_, mass density ρ in g/cc and temperature _T_ in eV, use
 ```
