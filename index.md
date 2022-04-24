@@ -82,11 +82,11 @@ The convention used has no Γ function prefactor. See the source code for other 
 Estimating the melting temperature can be done by
 ```
 Z = 13
-ion_density = 6.e22
+ion_density = 2.375/(1.6737e-24*27)
 print(MLM.melt_temperature(Z, ion_density))
 print(MLM.melt_temperature(Z, ion_density, original=True))
-0.09879250036489877
-0.11375117268556773
+0.08442852430440988
+0.08338125825141993
 ```
 Here, `original` uses the fit parameters from LM. 
   
