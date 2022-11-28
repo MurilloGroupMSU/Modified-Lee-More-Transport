@@ -213,12 +213,12 @@ def LM_Coulomb_logarithm(n_e, T_e, n_i, T_i, eta, z_bar):
     # b_max
     # It is not perfectly clear what LM meant by "Fermi temperature", so I used this:
     lambda_e = 1/np.sqrt(4*np.pi*n_e*1.44e-7/effective_temperature(T_e, eta)) # cm
-    lambda_i = 1/np.sqrt(4*np.pi*n_i*1.44e-7/T_i) # cm
+    lambda_i = 1/np.sqrt(4*np.pi*z_bar**2*n_i*1.44e-7/T_i) # cm
     a_i = (3/(4*np.pi*n_i))**(1/3) # I use this (a_i) for their R_0, since they didn't specify it.
     b_max = np.max([a_i, 1.0/np.sqrt(1/lambda_e**2 + 1/lambda_i**2)]) # LM rule for minimum CL
 
     # b_min
-    b_min = np.min([z_bar*1.44e-7/(3.0*T_e), 5e-8/np.sqrt(T_e)]) # units are cm
+    b_min = np.max([z_bar*1.44e-7/(3.0*T_e), 5e-8/np.sqrt(T_e)]) # units are cm
 #     b_min = np.min([z_bar*1.44e-7/(3.0*effective_temperature(T_e, eta)), 5e-8/np.sqrt(effective_temperature(T_e, eta))]) # what if LM used T_eff?
 
 
